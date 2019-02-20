@@ -6,6 +6,7 @@ Terraform module to provision AWS IAM Role/Profile for use with EBS EC2 instance
 |------|-------------|------|---------|----------|
 | name | Name for the IAM role/profile | string | - | yes |
 | tier | Elastic Beanstalk Environment tier, e.g. ('WebServer', 'Worker') | string | WebServer | no |
+| attach_full_s3_access | Add full S3 access permissions | string | true | no |
 
 ## Module Outputs
 

@@ -60,3 +60,9 @@ resource "aws_iam_role_policy_attachment" "AWSElasticBeanstalkWorkerTier" {
   role       = "${aws_iam_role.ec2.name}"
   policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkWorkerTier"
 }
+
+resource "aws_iam_role_policy_attachment" "AmazonS3FullAccess" {
+  count      = "${var.attach_full_s3_access == "true" ? 1 : 0}"
+  role       = "${aws_iam_role.ec2.name}"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+}
