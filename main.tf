@@ -66,3 +66,8 @@ resource "aws_iam_role_policy_attachment" "AmazonS3FullAccess" {
   role       = "${aws_iam_role.ec2.name}"
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
+
+resource "aws_iam_role_policy_attachment" "AmazonEC2ReadOnlyAccess" {
+  role       = "${aws_iam_role.ec2.name}"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
+}
